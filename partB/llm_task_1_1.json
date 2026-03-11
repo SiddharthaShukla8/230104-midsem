@@ -1,0 +1,11 @@
+{
+  "task_tag": "Task 1.1",
+  "code_used_verbatim": false,
+  "student_modification": "",
+  "top_5_prompts": [
+    "Summarize Algorithm 1 of the Truncated Gradient paper",
+    "Identify the step-by-step methods in Section 4",
+    "What problem does Truncated Gradient solve?",
+    "Format the summary as step by step from input to output"
+  ]
+}

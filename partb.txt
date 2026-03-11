@@ -1,0 +1,356 @@
+Advanced Machine Learning
+Mid-Semester Examination
+PART B: Reproduction, Experimentation & Analysis
+3rd Year, Semester 6
+NST, Rishihood University, Sonipat
+Release, Deadline, and Format
+Release Date 5th March 2026, 8 A.M.
+Deadline 2 hours before advance ml exam (i.e 12 March 2026, 8 A.M.)
+Total Marks 130 marks (130 raw marks will be scaled to 30% of the mid-semester
+exam score.)
+Expected Ef-
+fort
+Approximately 4 to 8 hours of focused work
+Format Open book, open tool (LLM use allowed with full disclosure)
+Submission Same GitHub repository as Part A + Google Form
+Paper Student must work on thesame paper submitted in Part A.
+Important Note
+Only students who completed Part A and submitted a valid paper in accordance with
+the checklist and constraints will be eligible for evaluation in Part B and Part C.
+Your Part A paper selection isbinding. No changes to the selected paper are permitted
+under any circumstances.
+Objective
+Part B assesses whether you can move from reading a classical machine learning paper selected
+in Part A to actually building, running, and critically interrogating it. Unlike Part A, which
+evaluated your ability to select and disclose, Part B evaluates the depth of your technical
+engagement. You will be evaluated across three interlocking dimensions:
+•Reasonable reproductionof the core contribution from your selected paper in Part A
+•Experimental analysisthrough meaningful baselines and ablations of the selected paper
+•Critical reflectionon where and why the method fails
+Part B has three sections, each testing a different layer of engagement with your paper:
+whether you understood it, whether you can implement it, and whether you can probe its limits.
+The 6 to 7-day window gives you flexibility, but the total scope is designed for approximately 4
+to 8 hours of focused work.
+1Important Note
+Part C is a closed-book viva or a set of subjective questions conducted during the
+system-based test.
+Every decision you make in Part B including why you chose a particular dataset, what
+your ablation revealed, and where the method failed may be examined in Part C.
+A student who scores below40% in Part Cwill have theirPart B marks capped at
+50% of the awarded score, regardless of submission quality.
+Repository Structure and Submission
+•Add apartB/folder to your existing Part A repository.
+•The repository name remains the same:rollnumber-midsem.
+•Add a folder named partB/ at the root of the repository.
+•Submit via the Google Form for Part B:https://forms.gle/yxfmRprmHDeAzx1C7
+The partB/ folder must contain exactly the following structure:
+File / Folder Purpose
+partB/task 1 1.ipynb,
+task 1 2.ipynb, ...,
+task 3 2.ipynb
+Separate notebook for each task, with all cells executed and
+outputs visible
+partB/report.pdfWritten report (maximum 4 pages excluding references; an
+appendix of up to 4 additional pages is allowed)
+partB/llm task 1 1.json,
+..., llm task 4 2.json
+LLM usage disclosure file for each task (mandatory)
+partB/results/All plots and figures saved as image files
+partB/data/Dataset files, with a README explaining how the dataset
+is obtained and how it is used in the respective notebooks
+partB/requirements.txtAll Python dependencies with version numbers; must be
+CPU-installable
+Important Note
+Submit your notebooks with all cells executed and all outputs visible. Do not clear
+outputs before submission.
+Missing required files or submitting an unexecuted notebooks will attract a20-mark
+penalty, with no exceptions.
+2Question 1: Understanding of Selected Paper(25 marks)
+Estimated Time:Approximately 1 to 1.5 hours
+This question tests whether you have read and understood your selected paper. Answers
+that appear to be generic summaries of the method family (e.g., SVM, GMM, ARIMA) rather
+than explanations grounded in the specific paper will receive lower marks and may be questioned
+during Part C.
+All responses must be written in clearly labelledmarkdown cellsin your notebook for this
+task.
+Task 1.1 Core Contribution / Architecture(8 marks)
+In a markdown cell, describe thecore contributions or architectureproposed in your
+selected paper.
+Your response must follow the structure below.
+Step-by-Step Method Description
+Describe the method as a sequence of steps from input to final output. Use the following
+format:
+•Step 1:Name of the step
+–Description of what happens in this step
+–Reference to the relevant equation, figure, or section in the paper
+–Purpose of this step in the proposed method/architecture
+•Step 2:Name of the step
+–Description
+–Reference (Eq./Fig./Section)
+–Purpose
+•Continue until the final output of the method is produced.
+Important Requirements
+•Each step must refer to thespecific design choices or componentsin your paper.
+•Avoid generic descriptions of the algorithm family.
+•Wherever possible, reference the relevantequation, figure, or section numberfrom
+the paper.
+Final Summary Sentence
+At the end of your answer, write one sentence stating:
+•What problem this paper solves
+•What the authors claim makes their approach better than existing alternatives
+Important Note
+Do not copy text from the paper or from an LLM. Write the explanation as if you are
+explaining the method to a classmate who understands the general method family but
+has not read this specific paper.
+3Task 1.2 Key Assumptions (8 marks)
+•Identifyminimum three assumptionsthat the paper’s method depends on. These
+assumptions must be embedded in theproposed contribution, architecture, or al-
+gorithmof the paper, rather than general machine learning assumptions (e.g., “data is
+i.i.d. ”).
+•For each assumption, provide the following:
+– Assumption:Clearly state the assumption made by the method.
+– Why the Method Needs It:Explain why the proposed contribution or algorithm
+depends on this assumption.
+– Violation Scenario:Describe a type of dataset or real-world scenario where this
+assumption would be violated.
+– Paper Reference:Cite the relevant section, figure, or equation in the paper where
+this assumption appears explicitly or implicitly.
+•Each assumption should be explained intwo to three sentences.
+•Your assumptions must be traceable to the paper. DuringPart C, you may be asked to
+point to the section of the paper where each assumption appears explicitly or implicitly.
+Important Note
+In a markdown cell, use the following format for each assumption.
+Assumption 1
+Assumption:
+Why the method needs it:
+Violation scenario:
+Paper reference:
+Task 1.3 What the Paper Claims to Improve (9 marks)
+•Identify the mainbaseline or prior methodthat the paper compares against. Name
+the method explicitly.[2 marks]
+•In your own words, explain, what limitation of this baseline the paper identifies.[2
+marks]
+•How the proposed method in the paper attempts to overcome this limitation.[1 marks]
+•Finally, stateone condition or scenariounder which the paper’s method wouldnot
+outperform the baseline, based on your reading of the paper. This does not need to
+be something explicitly discussed by the authors it may be your own reasoned inference.
+[4 marks]
+Important Note
+Question 1 containsno code. All responses must be written entirely inmarkdown
+cellsin your notebook for this task.
+Keep answersconcise and specific. Generic answers that could apply to any paper in
+the same method family will receivepartial marks.
+4Question 2: Reproduction on a Toy Dataset(40 marks)
+Estimated Time:Approximately 1.5 to 2 hours
+Implement the core method from your selected paper on a toy dataset that you choose
+independently. Do not use the exact dataset from the paper. Your chosen dataset must belong
+to the same problem type (e.g., binary classification, time-series forecasting, density estimation)
+but may differ in domain, size, or complexity. The goal is not to match the paper’s numbers
+exactly, it is to demonstrate that you understand the method well enough to apply it to new
+data, explain what it is doing at each step, and report at least one result using the same
+evaluation metric the paper uses.
+Task 2.1 Dataset Selection and Setup (5 marks)
+•Choose atoy datasetappropriate for the method in your selected paper.
+•Your dataset must have at least 100 samples and at least two features, unless your method
+type requires a specific structure such as consecutive time points.
+•In amarkdown cell, justify your dataset choice in3 to 5 sentences. Your explanation
+must include:
+–What the dataset is.
+–Why it is a reasonable testbed for the method proposed in your paper.
+–What limitations it has compared to the dataset used in the original paper.
+•Document anypreprocessing stepsyou perform.
+Important Note
+If you use a well-known dataset (e.g.,Iris,Wine,make classification, etc.), explain
+why it is appropriate foryour specific paper’s method, not just for the general method
+family.
+Task 2.2 Reproduction of any one Contribution from the Selected Paper (20
+marks)
+•Reproduce any one contribution of theproposed methodsin your selected paper. You
+may write the implementation yourself or use publicly available code if it was originally
+released by the paper’s authors, but the mechanism of the method must be clearly demon-
+strated.
+•At the beginning of this section, include a markdown cell stating:
+–Which result or contribution from the paper you are attempting to reproduce.
+–The evaluation metric you will use.
+•Everysignificant code blockmust be followed by a markdown cell that:
+–Explains in2–3 plain-English sentenceswhat the code block computes.
+5–Cites the specificequation, section, or algorithm stepfrom the paper that the
+code corresponds to.
+Important Note
+Your notebook for this task should clearly show:
+•the dataset used,
+•the implementation of the method,
+•the result obtained, and
+•a short interpretation of the result in a markdown cell.
+Task 2.3 Result, Comparison and Reproducibility Checklist (15 marks)
+In a markdown cell for the notebook of this task, report and discuss the outcome of your
+implementation.
+•Report yourachieved resultalongside thevalue reported in the paperfor the equiv-
+alent or most comparable experiment.
+•If your numbers differ which they likely will, write3 to 5 sentencesexplaining why.
+•Donotpresent a performance gap as a failure. Instead, describe it as an honest obser-
+vation supported by a reasoned explanation. Grading rewardsaccurate reasoning and
+transparencyover inflated or artificially tuned results.
+•Include at leastone visualisationof your result (for example: a plot, confusion matrix,
+fitted curve, forecast plot, or cluster diagram). Save the visualisation as an image file in:
+partB/results/
+•Include a final notebook cell titled“Reproducibility Checklist”that explicitly confirms
+each of the following:
+–Random seeds are set and documented at the top of each notebook, where applicable.
+–All dependencies are listed inrequirements.txtwith version numbers.
+–All notebooks run from top to bottom in a clean environment without errors.
+–Dataset loading requires no undocumented manual steps.
+–All hyperparameters are clearly named and defined in one place rather than scattered
+across cells.
+Important Note
+Task 2.2 is worth 20 marks and is graded primarily on the quality of the code-to-paper
+annotations, not on accuracy. A notebook that gets a mediocre result but clearly explains
+every step in relation to the paper will outperform one that gets a perfect result with no
+explanations.
+6Question 3: Ablation Study (35 marks)
+Estimated Time:Approximately 1.5 to 2 hours
+Question 3 asks you to probe the method: what happens when you remove a key component,
+and where does the method break? These tasks require running real experiments on real data
+and writing interpretations that go beyond describing the output.
+Task 3.1 Two-Component Ablation (20 marks)
+Remove or simplifyexactly two distinct componentsof the method proposed in your se-
+lected paper from Part A, one at a time. Each ablation must beindependent: when testing
+one component, keep all other parts of the method at their full settings. For each of the two
+components, your notebook for this task must contain:
+•Amarkdown cellnaming the component being ablated and explaining the role it plays
+in the full method (2–3 sentences). The explanation must be specific to your paper.
+•Codethat implements the ablated version of the method and records performance using
+thesame evaluation metricused in Question 2.
+•Aplot or tablecomparing the performance of the full method and the ablated version.
+Save the visualisation to:
+partB/results/
+•Aparagraph (5–7 sentences)interpreting the result. Discuss whether removing the
+component affected performance, whether the size of the change matches your expectation,
+and what this reveals about the contribution of that component.
+Important Note
+Marking breakdown:
+•Each component ablation is worth10 marks.
+•4 marksfor the experimental setup and result.
+•6 marksfor the interpretation and reasoning.
+Task 3.2 Failure Mode (15 marks)
+Construct or identifyone scenarioin which your method fails noticeably. This may be a
+specific data distribution, a hyperparameter regime, or a structural condition under which the
+method produces clearly worse output than expected. Your submission must contain:
+•Amarkdown celldescribing the failure scenario and explaining why you expected the
+method to struggle in that situation.
+•Codethat demonstrates the failure, along with a plot or metric comparison saved to:
+partB/results/
+•Aparagraph (5–7 sentences)explaining why the method fails in this scenario. Your
+explanation should connect the failure to aspecific assumption or design choice
+identified earlier in Question 1.
+7•One sentencesuggesting a concrete modification to the method that could address this
+failure. No implementation is required.
+Important Note
+•Good failure modes are rooted in the method’s assumptions from Task 1.2.
+•If one of your Task 1.2 assumptions is ’the data is linearly separable in kernel
+space’, your failure mode might be a dataset where no standard kernel achieves
+separability. The best failures close a loop with your understanding from Question
+1.
+•Task 3.2 is worth 15 marks: 5 marks for the empirical demonstration, 7 marks for
+the explanation linking the failure to the method’s assumptions, and 3 marks for
+the suggested modification.
+Question 4: Report and LLM Usage (30 marks)
+Task 4.1 Report (15 marks)
+•Your report.pdf is a single document that synthesises findings across all tasks and note-
+books.
+•It must be at most4 pages, excluding references (minimum 10pt font, 1-inch margins).
+•The report must cover the following (in any order):
+–A one-paragraph summary of the paper in your own words.(3 marks)
+–Your reproduction setup and result, including an honest commentary on any gap
+between your result and the paper’s reported value.(3 marks)
+–The two ablation findings and what they reveal about the contribution of the method’s
+components.(3 marks)
+–Your failure mode and its explanation.(3 marks)
+–A short and honest reflection: what you could not implement, what surprised you
+during the process, and what you would revisit if you had more time.(3 marks)
+Task 4.2 LLM Usage Disclosure (15 marks)
+The same JSON format used in Part A applies. All the LLM Usage files partB/llmtask 1 1.json,
+..., llm task 4 2.json must follow the Part A structure, with the followingadditional required
+fields for each interaction.
+8Field Requirement
+task tagIndicates which task the interaction relates to (e.g.,’Task 1.2’,
+’Task 2.2’,’Task 3.1 Component 2’).
+code used verbatimBoolean value —trueif any LLM-generated code was copied into
+any of the task notebook without modification.
+student modificationRequired whencode used verbatim = true. Describe what you
+modified and why.
+In each LLM disclosure file, include a top 5 prompts section following the same template as
+Part A. The prompts selected must be drawn from interactions logged in that specific file that
+is, prompts relevant to the task the file corresponds to. (if fewer than five interactions were
+logged for a task, include all of them)
+1.5 markswill be awarded for each correctly structured and complete LLM usage disclosure
+file.
+•llm task 1 1.json,llm task 1 2.json,llm task 1 3.json— Question 1 (3 files×1.5
+= 4.5 marks)
+•llm task 2 1.json,llm task 2 2.json,llm task 2 3.json— Question 2 (3 files×1.5
+= 4.5 marks)
+•llm task 3 1.json,llm task 3 2.json— Question 3 (2 files×1.5 = 3 marks)
+•llm task 4 1.json,llm task 4 2.json— Question 4 (2 files×1.5 = 3 marks)
+Total: 10 files×1.5 marks = 15 marks.
+A file is considered correct and complete if it: contains at least one logged interaction for the
+corresponding task (or explicitly states that no LLM was used), includes all required fields
+(task tag,code used verbatim,student modificationwhere applicable), and contains a
+valid student verification and declaration with top 5 prompts.
+Important Note
+Question 4 requires no notebook; the deliverables are report.pdf and the LLM disclosure
+JSON files only.
+LLMs may be used freely for reading comprehension, debugging, and writing assistance.
+However, the following decisions must be your own:
+•Choosing which components to ablate and explaining why.
+•Identifying a meaningful failure mode specific to your paper.
+•Writing an honest reflection that matches your actual results.
+These are precisely the aspects that might be examined inPart C.
+9Evaluation Scheme
+Criterion Sub-marks Total
+Question 1: Paper Understanding 25
+Task 1.1 — Algorithm in Your Own Words 8
+Task 1.2 — Key Assumptions 8
+Task 1.3 — What the Paper Claims to Improve 9
+Question 2: Reproduction on Toy / Public Dataset 40
+Task 2.1 — Dataset Selection and Setup 5
+Task 2.2 — Implementation with Paper References 20
+Task 2.3 — Result, Comparison and Reproducibility
+Checklist
+15
+Question 3: Ablation Study 35
+Task 3.1 — Two-Component Ablation (2×10 marks) 20
+Task 3.2 — Failure Mode Analysis 15
+Question 4: Report and LLM Usage 30
+Task 4.1 — Report 15
+Task 4.2 — LLM Usage Disclosure 15
+Penalty for Repository / notebook structure violation−20
+TOTAL 130
+Important Notes
+Permitted
+•Any CPU-installable Python library —scikit-learn,numpy,scipy,statsmodels,matplotlib,
+seaborn, and equivalent libraries.
+•LLMs for reading comprehension, debugging, and writing assistance, provided their use
+is fully disclosed in the required JSON file.
+•Toy datasets (e.g.,make classification,make blobs) or well-known public datasets as
+substitutes for the paper’s original dataset.
+•Simplified implementations — you are not required to reproduce every detail of the original
+paper.
+Not Permitted
+•Changing the paper selected in Part A.
+•Using GPU-dependent code or cloud-based compute resources of any kind.
+•Submitting a notebook with cleared outputs or missing outputs.
+•Sharing or reusing another student’s code, ablation experiments, or results.
+10Important Note
+•No submissions will be accepted after the stated deadline under any
+circumstances.
+•Ensure that yourGitHub repository URLis submitted through the official
+Google Formfor Part Bhttps://forms.gle/yxfmRprmHDeAzx1C7before the
+deadline.
+•Submissions after the deadline, or any modifications to the repository after the
+deadline timestamp, will not be considered and may lead to the cancellation of
+your Part B evaluation.
+•Contradictions across tasks for example, a failure mode unrelated to your stated as-
+sumptions, or a report that does not match your notebook results, will be penalised
+during evaluation.
+All the best.
+11

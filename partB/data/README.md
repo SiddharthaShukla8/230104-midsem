@@ -1,0 +1,1 @@
+Dataset generated using sklearn make_regression with 1000 samples, 100 features, and 10 informative features. Data is StandardScaled and saved as numpy arrays.
